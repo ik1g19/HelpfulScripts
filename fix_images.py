@@ -3,7 +3,7 @@ import os
 import re
 
 def replace_strings(file_path, prefix):
-    with open(file_path, 'r') as f:
+    with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
     # Use regular expression to find strings of the form ![[a|b]]
@@ -24,7 +24,7 @@ def replace_strings(file_path, prefix):
         content = content.replace('![[{0}|{1}]]'.format(a, b), replace_str)
 
     # Write updated content back to file
-    with open(file_path, 'w') as f:
+    with open(file_path, 'w', encoding='utf-8') as f:
         f.write(content)
 
 
