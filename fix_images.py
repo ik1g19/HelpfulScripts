@@ -29,7 +29,8 @@ def replace_strings(file_path, prefix):
 
 
 args = sys.argv
-arg1 = args[1]
+if len(args) == 1: arg1 = ""
+else: arg1 = args[1]
 
 # Loop through all files in current directory and subdirectories
 for root, dirs, files in os.walk('.'):
